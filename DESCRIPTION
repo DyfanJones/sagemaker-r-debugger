@@ -1,0 +1,24 @@
+Package: R6sagemaker.debugger
+Type: Package
+Title: R6sagemaker debugger for sagemaker operations
+Version: 0.1.0
+Authors@R: c(person("Dyfan", "Jones", email="dyfan.r.jones@gmail.com", role= c("aut", "cre")),
+             person("Amazon.com, Inc.", role = "cph"))
+Description: `R6sagemaker` debugger for sagemaker operations.
+Imports:
+    lgr,
+    paws,
+    R6,
+    data.table,
+    jsonlite,
+    methods,
+    urltools,
+    uuid
+License: Apache License (>= 2.0)
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Collate:
+    'r_utils.R'
+    'actions_utils.R'
+    'actions_actions.R'
+    'zzz.R'
