@@ -26,4 +26,6 @@ Collate:
     'debugger_rules_collections.R'
     'debugger_rules_constants.R'
     'debugger_rules_ruleGroups.R'
+    'profiler_rules_utils.R'
+    'profiler_rules_rules.R'
     'zzz.R'
