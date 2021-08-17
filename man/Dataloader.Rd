@@ -39,9 +39,9 @@ Initialize Dataloader class
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{min_threshold}}{: how many cores should be at least used by dataloading processes. Default ``70%``}
+\item{\code{min_threshold}}{: how many cores should be at least used by dataloading processes. Default 70\%}
 
-\item{\code{max_threshold}}{: how many cores should be at maximum used by dataloading processes. Default ``200%``}
+\item{\code{max_threshold}}{: how many cores should be at maximum used by dataloading processes. Default 200\%}
 
 \item{\code{scan_interval_us}}{: interval with which timeline files are scanned. Default is 60000000 us.}
 }

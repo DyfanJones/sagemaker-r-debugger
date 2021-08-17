@@ -42,11 +42,11 @@ Initialize CPUBottleneck class
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{threshold}}{: defines the threshold beyond which Rule should return True. Default is 50 percent.
-So if there is a bottleneck more than ``50%`` of the time during the training Rule will return True.}
+So if there is a bottleneck more than 50\% of the time during the training Rule will return True.}
 
-\item{\code{gpu_threshold}}{: threshold that defines when GPU is considered being under-utilized. Default is ``10%``}
+\item{\code{gpu_threshold}}{: threshold that defines when GPU is considered being under-utilized. Default is 10\%}
 
-\item{\code{cpu_threshold}}{: threshold that defines high CPU utilization. Default is above ``90%``}
+\item{\code{cpu_threshold}}{: threshold that defines high CPU utilization. Default is above 90\%}
 
 \item{\code{patience}}{: How many values to record before checking for CPU bottlenecks. During training
 initialization, GPU is likely at 0 percent, so Rule should not check for

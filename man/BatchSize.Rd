@@ -46,17 +46,17 @@ Initialize BatchSize class
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{cpu_threshold_p95}}{: defines the threshold for 95th quantile of CPU utilization.Default is ``70%``.}
+\item{\code{cpu_threshold_p95}}{(numeric): defines the threshold for 95th quantile of CPU utilization.Default is 70\%.}
 
-\item{\code{gpu_threshold_p95}}{: defines the threshold for 95th quantile of GPU utilization.Default is ``70%``.}
+\item{\code{gpu_threshold_p95}}{(numeric): defines the threshold for 95th quantile of GPU utilization.Default is 70\%.}
 
-\item{\code{gpu_memory_threshold_p95}}{: defines the threshold for 95th quantile of GPU memory utilization.Default is ``70%``.}
+\item{\code{gpu_memory_threshold_p95}}{(numeric): defines the threshold for 95th quantile of GPU memory utilization.Default is 70\%.}
 
-\item{\code{patience}}{: defines how many data points to capture before Rule runs the first evluation. Default 100}
+\item{\code{patience}}{(numeric): defines how many data points to capture before Rule runs the first evluation. Default 100}
 
-\item{\code{window}}{: window size for computing quantiles.}
+\item{\code{window}}{(numeric): window size for computing quantiles.}
 
-\item{\code{scan_interval_us}}{: interval with which timeline files are scanned. Default is 60000000 us.}
+\item{\code{scan_interval_us}}{(numeric): interval with which timeline files are scanned. Default is 60000000 us.}
 }
 \if{html}{\out{</div>}}
 }

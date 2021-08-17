@@ -42,13 +42,13 @@ Initialize IOBottleneck class
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{threshold}}{: defines the threshold when Rule should return True. Default
-is 50 percent. So if there is a bottleneck more than ``50%`` of the
+is 50 percent. So if there is a bottleneck more than 50\% of the
 time during the training Rule will return True.}
 
 \item{\code{gpu_threshold}}{: threshold that defines when GPU is considered being under-utilized.
-Default is ``70%``}
+Default is 70\%}
 
-\item{\code{io_threshold}}{: threshold that defines high IO wait time. Default is above ``50%``}
+\item{\code{io_threshold}}{: threshold that defines high IO wait time. Default is above 50\%}
 
 \item{\code{patience}}{: How many values to record before checking for IO bottlenecks. During
 training initilization, GPU is likely at 0 percent, so Rule should not check

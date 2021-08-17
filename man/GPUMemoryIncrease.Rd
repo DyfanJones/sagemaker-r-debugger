@@ -41,8 +41,8 @@ Initialize GPUMemoryIncrease class
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{increase}}{: defines the threshold for absolute memory increase.Default is ``5%``.
-So if moving average increase from ``5%`` to ``6%``, the rule will fire.}
+\item{\code{increase}}{: defines the threshold for absolute memory increase.Default is 5\%.
+So if moving average increase from 5\% to 6\%, the rule will fire.}
 
 \item{\code{patience}}{: defines how many continous datapoints to capture before Rule runs
 the first evluation. Default is 1000}

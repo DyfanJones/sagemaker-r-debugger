@@ -36,12 +36,12 @@ BatchSize = R6Class("BatchSize",
   public = list(
 
     #' @description Initialize BatchSize class
-    #' @param cpu_threshold_p95 : defines the threshold for 95th quantile of CPU utilization.Default is ``70%``.
-    #' @param gpu_threshold_p95 : defines the threshold for 95th quantile of GPU utilization.Default is ``70%``.
-    #' @param gpu_memory_threshold_p95 : defines the threshold for 95th quantile of GPU memory utilization.Default is ``70%``.
-    #' @param patience : defines how many data points to capture before Rule runs the first evluation. Default 100
-    #' @param window : window size for computing quantiles.
-    #' @param scan_interval_us : interval with which timeline files are scanned. Default is 60000000 us.
+    #' @param cpu_threshold_p95 (numeric): defines the threshold for 95th quantile of CPU utilization.Default is 70\%.
+    #' @param gpu_threshold_p95 (numeric): defines the threshold for 95th quantile of GPU utilization.Default is 70\%.
+    #' @param gpu_memory_threshold_p95 (numeric): defines the threshold for 95th quantile of GPU memory utilization.Default is 70\%.
+    #' @param patience (numeric): defines how many data points to capture before Rule runs the first evluation. Default 100
+    #' @param window (numeric): window size for computing quantiles.
+    #' @param scan_interval_us (numeric): interval with which timeline files are scanned. Default is 60000000 us.
     initialize = function(cpu_threshold_p95=70,
                           gpu_threshold_p95=70,
                           gpu_memory_threshold_p95=70,
@@ -67,6 +67,7 @@ BatchSize = R6Class("BatchSize",
   lock_objects = F
 )
 
+
 #' @title Debugger CPUBottleneck class
 #' @description This rule helps to detect if GPU is underutilized due to CPU bottlenecks.
 #'              Rule returns True if number of CPU bottlenecks exceeds a predefined threshold.
@@ -77,9 +78,9 @@ CPUBottleneck = R6Class("CPUBottleneck",
 
     #' @description Initialize CPUBottleneck class
     #' @param threshold : defines the threshold beyond which Rule should return True. Default is 50 percent.
-    #'              So if there is a bottleneck more than ``50%`` of the time during the training Rule will return True.
-    #' @param gpu_threshold : threshold that defines when GPU is considered being under-utilized. Default is ``10%``
-    #' @param cpu_threshold : threshold that defines high CPU utilization. Default is above ``90%``
+    #'              So if there is a bottleneck more than 50\% of the time during the training Rule will return True.
+    #' @param gpu_threshold : threshold that defines when GPU is considered being under-utilized. Default is 10\%
+    #' @param cpu_threshold : threshold that defines high CPU utilization. Default is above 90\%
     #' @param patience : How many values to record before checking for CPU bottlenecks. During training
     #'              initialization, GPU is likely at 0 percent, so Rule should not check for
     #'              under utilization immediately. Default 1000.
@@ -115,8 +116,8 @@ Dataloader = R6Class("Dataloader",
   public = list(
 
     #' @description Initialize Dataloader class
-    #' @param min_threshold : how many cores should be at least used by dataloading processes. Default ``70%``
-    #' @param max_threshold : how many cores should be at maximum used by dataloading processes. Default ``200%``
+    #' @param min_threshold : how many cores should be at least used by dataloading processes. Default 70\%
+    #' @param max_threshold : how many cores should be at maximum used by dataloading processes. Default 200\%
     #' @param scan_interval_us : interval with which timeline files are scanned. Default is 60000000 us.
     initialize = function(min_threshold=70,
                           max_threshold=200,
@@ -148,8 +149,8 @@ GPUMemoryIncrease = R6Class("GPUMemoryIncrease",
   public = list(
 
     #' @description Initialize GPUMemoryIncrease class
-    #' @param increase : defines the threshold for absolute memory increase.Default is ``5%``.
-    #'              So if moving average increase from ``5%`` to ``6%``, the rule will fire.
+    #' @param increase : defines the threshold for absolute memory increase.Default is 5\%.
+    #'              So if moving average increase from 5\% to 6\%, the rule will fire.
     #' @param patience : defines how many continous datapoints to capture before Rule runs
     #'              the first evluation. Default is 1000
     #' @param window : window size for computing moving average of continous datapoints
@@ -183,11 +184,11 @@ IOBottleneck = R6Class("IOBottleneck",
 
     #' @description Initialize IOBottleneck class
     #' @param threshold : defines the threshold when Rule should return True. Default
-    #'              is 50 percent. So if there is a bottleneck more than ``50%`` of the
+    #'              is 50 percent. So if there is a bottleneck more than 50\% of the
     #'              time during the training Rule will return True.
     #' @param gpu_threshold : threshold that defines when GPU is considered being under-utilized.
-    #'              Default is ``70%``
-    #' @param io_threshold : threshold that defines high IO wait time. Default is above ``50%``
+    #'              Default is 70\%
+    #' @param io_threshold : threshold that defines high IO wait time. Default is above 50\%
     #' @param patience : How many values to record before checking for IO bottlenecks. During
     #'              training initilization, GPU is likely at 0 percent, so Rule should not check
     #'              for underutilization immediatly. Default 1000.
