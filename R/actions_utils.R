@@ -12,7 +12,7 @@ PHONE_NUMBER_REGEX = "^\\+\\d{1,15}$"
 validate_training_job_prefix = function(key, value){
   if (!is.character(value))
     stopf("%s must be a string!", key)
-  if (!grepl(RAINING_JOB_PREFIX_REGEX, value))
+  if (!grepl(TRAINING_JOB_PREFIX_REGEX, value))
     stopf("Invalid training job prefix! Must contain only letters, numbers and hyphens!")
 }
 
