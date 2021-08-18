@@ -8,8 +8,9 @@ format_class <- function(self){
 }
 
 # helper function add sprintf functionality to stop functions.
-stopf = function(fmt, ...){
+stopf <- function(fmt, ...){
   msg = sprintf(fmt, ...)
   stop(msg, call. = FALSE)
 }
 
+split_str <- function(str, split = ",") unlist(strsplit(str, split = split))
