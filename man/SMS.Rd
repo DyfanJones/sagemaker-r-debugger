@@ -21,7 +21,7 @@ Action for sending an SMS to the provided phone number when the rule
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
-\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="Action" data-id="format_class">}\href{../../R6sagemaker.debugger/html/Action.html#method-format_class}{\code{R6sagemaker.debugger::Action$format_class()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="Action" data-id="format">}\href{../../R6sagemaker.debugger/html/Action.html#method-format}{\code{R6sagemaker.debugger::Action$format()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="Action" data-id="serialize">}\href{../../R6sagemaker.debugger/html/Action.html#method-serialize}{\code{R6sagemaker.debugger::Action$serialize()}}\out{</span>}
 }
 \out{</details>}

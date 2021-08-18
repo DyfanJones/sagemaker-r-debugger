@@ -13,6 +13,7 @@ Higher level object to maintain a list of actions to be invoked
 \item \href{#method-new}{\code{ActionList$new()}}
 \item \href{#method-update_training_job_prefix_if_specified}{\code{ActionList$update_training_job_prefix_if_specified()}}
 \item \href{#method-serialize}{\code{ActionList$serialize()}}
+\item \href{#method-format}{\code{ActionList$format()}}
 \item \href{#method-clone}{\code{ActionList$clone()}}
 }
 }
@@ -23,13 +24,13 @@ Higher level object to maintain a list of actions to be invoked
 Offers higher level `serialize` function to
              handle serialization of actions as a string list of dictionaries.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ActionList$new(actions)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ActionList$new(...)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{actions}}{: List of actions.}
+\item{\code{...}}{: List of actions.}
 }
 \if{html}{\out{</div>}}
 }
@@ -68,6 +69,16 @@ Serialize the action parameters as a string dictionary.
 \subsection{Returns}{
 Action parameters serialized as a string dictionary.
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-format"></a>}}
+\if{latex}{\out{\hypertarget{method-format}{}}}
+\subsection{Method \code{format()}}{
+format class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ActionList$format()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

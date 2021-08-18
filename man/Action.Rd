@@ -13,7 +13,7 @@ Base class for action, which is to be invoked when a rule fires.
 \itemize{
 \item \href{#method-new}{\code{Action$new()}}
 \item \href{#method-serialize}{\code{Action$serialize()}}
-\item \href{#method-format_class}{\code{Action$format_class()}}
+\item \href{#method-format}{\code{Action$format()}}
 \item \href{#method-clone}{\code{Action$clone()}}
 }
 }
@@ -49,12 +49,12 @@ Action parameters serialized as a string dictionary.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-format_class"></a>}}
-\if{latex}{\out{\hypertarget{method-format_class}{}}}
-\subsection{Method \code{format_class()}}{
+\if{html}{\out{<a id="method-format"></a>}}
+\if{latex}{\out{\hypertarget{method-format}{}}}
+\subsection{Method \code{format()}}{
 format class
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Action$format_class()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Action$format()}\if{html}{\out{</div>}}
 }
 
 }

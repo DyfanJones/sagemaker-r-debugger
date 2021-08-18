@@ -13,6 +13,7 @@ Debugger ProfilerRule Base class
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{ProfilerRuleBase$new()}}
+\item \href{#method-format}{\code{ProfilerRuleBase$format()}}
 \item \href{#method-clone}{\code{ProfilerRuleBase$clone()}}
 }
 }
@@ -32,6 +33,16 @@ Initialize ProfilerRuleBase class
 }
 \if{html}{\out{</div>}}
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-format"></a>}}
+\if{latex}{\out{\hypertarget{method-format}{}}}
+\subsection{Method \code{format()}}{
+format class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ProfilerRuleBase$format()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

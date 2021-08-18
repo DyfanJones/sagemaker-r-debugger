@@ -23,6 +23,7 @@ This rule measures overall system usage per worker node. The rule
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../R6sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{R6sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
 }
 \out{</details>}
 }
