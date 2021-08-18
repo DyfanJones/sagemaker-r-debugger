@@ -18,6 +18,11 @@ ProfilerRuleBase = R6Class("ProfilerRuleBase",
       rule_parameters = list(...)
       rule_parameters[["rule_to_invoke"]] = class(self)[[1]]
       self$rule_parameters = rule_parameters
+    },
+
+    #' @description format class
+    format = function(){
+      format_class(self)
     }
   ),
   lock_objects = F
@@ -90,11 +95,11 @@ CPUBottleneck = R6Class("CPUBottleneck",
                           cpu_threshold=90,
                           patience=1000,
                           scan_interval_us=60 * 1000 * 1000){
-      validate_percentile("threshold", threshold)
-      validate_percentile("gpu_threshold", gpu_threshold)
-      validate_percentile("cpu_threshold", cpu_threshold)
-      validate_positive_integer("patience", patience)
-      validate_positive_integer("scan_interval_us", scan_interval_us)
+      validate_percentile(class(self)[[1]], "threshold", threshold)
+      validate_percentile(class(self)[[1]], "gpu_threshold", gpu_threshold)
+      validate_percentile(class(self)[[1]], "cpu_threshold", cpu_threshold)
+      validate_positive_integer(class(self)[[1]], "patience", patience)
+      validate_positive_integer(class(self)[[1]], "scan_interval_us", scan_interval_us)
 
       super$initialize(
         threshold=threshold,
@@ -389,21 +394,10 @@ ProfilerReport = R6Class("ProfilerReport",
                           ...){
       rule_parameters = list(...)
 
-      rule_classes = list(
-        BatchSize,
-        CPUBottleneck,
-        Dataloader,
-        GPUMemoryIncrease,
-        IOBottleneck,
-        LoadBalancing,
-        LowGPUUtilization,
-        MaxInitializationTime,
-        OverallSystemUsage,
-        StepOutlier)
-
-      rule_names = lapply(private$rule_classes, function(x) x$classname)
+      rule_classes = private$.get_rules()
+      rule_names = lapply(rule_classes, function(x) x$classname)
       names(rule_classes) = tolower(rule_names)
-      validate_boolean(self$class[[1]], "opt_out_telemetry", opt_out_telemetry)
+      validate_boolean(class(self)[[1]], "opt_out_telemetry", opt_out_telemetry)
 
       formatted_rule_parameters = list()
 
@@ -424,13 +418,30 @@ ProfilerReport = R6Class("ProfilerReport",
           do.call(rule_class$new, init_params)
         },
         error = function(e){
-          stopf(invalid_param_error, parameter_name, class(rule_class)[1], rule_signature)
+          rule_args = names(Filter(Negate(is.null), as.list(args(rule_class$public_methods$initialize))))
+          stopf(invalid_param_error, parameter_name, rule_class$classname, paste(rule_args,  collapse =", "))
         })
-        formatted_key = sprintf("%s_%s", class(rule_class)[[1]], parameter_name)
+        formatted_key = sprintf("%s_%s", rule_class$classname, parameter_name)
         formatted_rule_parameters[[formatted_key]] = val
       }
       super$initialize(
         opt_out_telemetry=opt_out_telemetry, custom_rule_parameters=formatted_rule_parameters
+      )
+    }
+  ),
+  private = list(
+    .get_rules = function(){
+      return(list(
+        BatchSize,
+        CPUBottleneck,
+        Dataloader,
+        GPUMemoryIncrease,
+        IOBottleneck,
+        LoadBalancing,
+        LowGPUUtilization,
+        MaxInitializationTime,
+        OverallSystemUsage,
+        StepOutlier)
       )
     }
   ),
