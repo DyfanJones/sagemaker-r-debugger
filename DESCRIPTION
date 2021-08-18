@@ -29,3 +29,6 @@ Collate:
     'profiler_rules_utils.R'
     'profiler_rules_rules.R'
     'zzz.R'
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
