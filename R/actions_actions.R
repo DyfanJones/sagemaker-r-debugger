@@ -34,7 +34,7 @@ Action = R6Class("Action",
     },
 
     #' @description format class
-    format_class = function(){
+    format = function(){
       format_class(self)
     }
   ),
@@ -50,11 +50,9 @@ ActionList = R6Class("ActionList",
 
     #' @description Offers higher level `serialize` function to
     #'              handle serialization of actions as a string list of dictionaries.
-    #' @param actions : List of actions.
-    initialize = function(actions){
-      stopifnot(
-        is.list(actions)
-      )
+    #' @param ... : List of actions.
+    initialize = function(...){
+      actions = list(...)
       if (!all(sapply(actions, function(action) inherits(action, "Action"))))
         stopf("actions must be list of Action objects!")
       self$actions = actions
@@ -79,6 +77,11 @@ ActionList = R6Class("ActionList",
     serialize = function(){
       parts = paste(lapply(self$actions, function(action) action$serialize()), collapse="\n")
       return(paste0("[", parts, "]"))
+    },
+
+    #' @description format class
+    format = function(){
+      format_class(self)
     }
   ),
   lock_objects = F
@@ -98,9 +101,9 @@ StopTraining = R6Class("StopTraining",
     #'              be stopped.
     initialize = function(training_job_prefix=NULL){
       self$use_default_training_job_prefix = TRUE
-      if (!is.null(training_job_prefix))
+      if (!is.null(training_job_prefix)){
         validate_training_job_prefix("training_job_prefix", training_job_prefix)
-      self$use_default_training_job_prefix = FALSE
+        self$use_default_training_job_prefix = FALSE}
       super$initialize(training_job_prefix=training_job_prefix)
     },
 
@@ -111,7 +114,7 @@ StopTraining = R6Class("StopTraining",
     #'              of the training job name are intentionally caught in the sagemaker SDK and not here.
     #' @param training_job_name : Name of the training job, passed in when `estimator.fit` is called.
     update_training_job_prefix_if_not_specified = function(training_job_name){
-      if (!is.null(self$use_default_training_job_prefix))
+      if (isTRUE(self$use_default_training_job_prefix))
         self$action_parameters[["training_job_prefix"]] = training_job_name
     }
   ),
