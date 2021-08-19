@@ -7,13 +7,10 @@ Authors@R: c(person("Dyfan", "Jones", email="dyfan.r.jones@gmail.com", role= c("
 Description: `R6sagemaker` debugger for sagemaker operations.
 Imports:
     lgr,
-    paws,
     R6,
     data.table,
     jsonlite,
-    methods,
-    urltools,
-    uuid
+    methods
 License: Apache License (>= 2.0)
 Encoding: UTF-8
 RoxygenNote: 7.1.1
