@@ -8,8 +8,8 @@ test_that("test default profiler report rule", {
   rule = ProfilerReport$new()
   expect_equal(rule$rule_name, ProfilerReport$classname)
   expect_equal(rule$rule_parameters, list(
-    opt_out_telemetry=FALSE,
-    custom_rule_parameters=list(),
+    # opt_out_telemetry=FALSE, # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+    # custom_rule_parameters=list(), # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
     rule_to_invoke=ProfilerReport$classname
     )
   )
@@ -19,56 +19,62 @@ test_that("test opt out flag for profiler report rule", {
   # Default Case
   rule = ProfilerReport$new()
   expect_equal(rule$rule_parameters, list(
-    opt_out_telemetry=FALSE,
-    custom_rule_parameters=list(),
+    # opt_out_telemetry=FALSE,
+    # custom_rule_parameters=list(), # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
     rule_to_invoke=ProfilerReport$classname
     )
   )
 
   # Explicit Opt In
-  rule = ProfilerReport$new(opt_out_telemetry=FALSE)
+  rule = ProfilerReport$new(
+    # opt_out_telemetry=FALSE  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+  )
   expect_equal(rule$rule_parameters, list(
-    opt_out_telemetry=FALSE,
-    custom_rule_parameters=list(),
+    # opt_out_telemetry=FALSE, # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+    # custom_rule_parameters=list(),  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
     rule_to_invoke=ProfilerReport$classname
     )
   )
 
   # Explicit Opt Out
-  rule = ProfilerReport$new(opt_out_telemetry=TRUE)
+  rule = ProfilerReport$new(
+    # opt_out_telemetry=TRUE  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+  )
   expect_equal(rule$rule_parameters, list(
-    opt_out_telemetry=TRUE,
-    custom_rule_parameters=list(),
+    # opt_out_telemetry=TRUE,  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+    # custom_rule_parameters=list(), # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
     rule_to_invoke=ProfilerReport$classname
     )
   )
 
   # Invalid Input
-  expect_error(
-    ProfilerReport$new(opt_out_telemetry="False"),
-    "accepts only boolean values for"
-  )
+  # expect_error(
+  #   ProfilerReport$new(opt_out_telemetry="False"),
+  #   "accepts only boolean values for"
+  # )
 })
 
 test_that("test valid profiler report rule custom params", {
   rule = ProfilerReport$new(CPUBottleneck_threshold=30)
   expect_equal(rule$rule_name, ProfilerReport$classname)
   expect_equal(rule$rule_parameters,list(
-    "opt_out_telemetry"=FALSE,
-    "custom_rule_parameters"=list("CPUBottleneck_threshold"=30),
+    # "opt_out_telemetry"=FALSE, # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+    # "custom_rule_parameters"=list("CPUBottleneck_threshold"=30), # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+    "CPUBottleneck_threshold"=30,  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
     "rule_to_invoke"=ProfilerReport$classname
     )
   )
 
   # case of parameter doesn't matter
-  rule = ProfilerReport$new(cpubottleneck_threshold=20)
-  expect_equal(rule$rule_name, ProfilerReport$classname)
-  expect_equal(rule$rule_parameters,list(
-    "opt_out_telemetry"=FALSE,
-    "custom_rule_parameters"=list("CPUBottleneck_threshold"=20),
-    "rule_to_invoke"=ProfilerReport$classname
-    )
-  )
+  # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+  # rule = ProfilerReport$new(cpubottleneck_threshold=20)
+  # expect_equal(rule$rule_name, ProfilerReport$classname)
+  # expect_equal(rule$rule_parameters,list(
+  #   "opt_out_telemetry"=FALSE,
+  #   "custom_rule_parameters"=list("CPUBottleneck_threshold"=20),
+  #   "rule_to_invoke"=ProfilerReport$classname
+  #   )
+  # )
 })
 
 test_that("test invalid profiler report rule custom params", {

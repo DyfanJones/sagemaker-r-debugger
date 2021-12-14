@@ -38,14 +38,12 @@ This rule will create a profiler report after invoking all of the rules. The par
 \subsection{Method \code{new()}}{
 Initialize ProfilerReport class
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ProfilerReport$new(opt_out_telemetry = FALSE, ...)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ProfilerReport$new(...)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{opt_out_telemetry}}{: Place holder}
-
 \item{\code{...}}{: Dictionary mapping rule + parameter name to value.}
 }
 \if{html}{\out{</div>}}

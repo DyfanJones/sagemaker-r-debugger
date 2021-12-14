@@ -388,16 +388,16 @@ ProfilerReport = R6Class("ProfilerReport",
   public = list(
 
     #' @description Initialize ProfilerReport class
-    #' @param opt_out_telemetry : Place holder
+    # #' @param opt_out_telemetry : Place holder
     #' @param ... : Dictionary mapping rule + parameter name to value.
-    initialize = function(opt_out_telemetry = FALSE,
+    initialize = function(# opt_out_telemetry = FALSE, # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
                           ...){
       rule_parameters = list(...)
 
       rule_classes = private$.get_rules()
       rule_names = lapply(rule_classes, function(x) x$classname)
       names(rule_classes) = tolower(rule_names)
-      validate_boolean(class(self)[[1]], "opt_out_telemetry", opt_out_telemetry)
+      # validate_boolean(class(self)[[1]], "opt_out_telemetry", opt_out_telemetry)
 
       formatted_rule_parameters = list()
 
@@ -425,7 +425,9 @@ ProfilerReport = R6Class("ProfilerReport",
         formatted_rule_parameters[[formatted_key]] = val
       }
       super$initialize(
-        opt_out_telemetry=opt_out_telemetry, custom_rule_parameters=formatted_rule_parameters
+        # opt_out_telemetry=opt_out_telemetry, # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+        # custom_rule_parameters=formatted_rule_parameters # revert test for 1.0.1 to be compatible with sagemaker-python-sdk
+        ...
       )
     }
   ),
