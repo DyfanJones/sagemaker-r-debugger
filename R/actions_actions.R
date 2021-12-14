@@ -75,7 +75,7 @@ ActionList = R6Class("ActionList",
     #' @description Serialize the action parameters as a string dictionary.
     #' @return  Action parameters serialized as a string dictionary.
     serialize = function(){
-      parts = paste(lapply(self$actions, function(action) action$serialize()), collapse="\n")
+      parts = paste(lapply(self$actions, function(action) action$serialize()), collapse=", ")
       return(paste0("[", parts, "]"))
     },
 
