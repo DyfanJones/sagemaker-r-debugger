@@ -11,7 +11,7 @@ Higher level object to maintain a list of actions to be invoked
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{ActionList$new()}}
-\item \href{#method-update_training_job_prefix_if_specified}{\code{ActionList$update_training_job_prefix_if_specified()}}
+\item \href{#method-update_training_job_prefix_if_not_specified}{\code{ActionList$update_training_job_prefix_if_not_specified()}}
 \item \href{#method-serialize}{\code{ActionList$serialize()}}
 \item \href{#method-format}{\code{ActionList$format()}}
 \item \href{#method-clone}{\code{ActionList$clone()}}
@@ -36,9 +36,9 @@ Offers higher level `serialize` function to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-update_training_job_prefix_if_specified"></a>}}
-\if{latex}{\out{\hypertarget{method-update_training_job_prefix_if_specified}{}}}
-\subsection{Method \code{update_training_job_prefix_if_specified()}}{
+\if{html}{\out{<a id="method-update_training_job_prefix_if_not_specified"></a>}}
+\if{latex}{\out{\hypertarget{method-update_training_job_prefix_if_not_specified}{}}}
+\subsection{Method \code{update_training_job_prefix_if_not_specified()}}{
 For any StopTraining actions in the action list, update the trainingjob
              prefix to be the training job name if the user has not already specified
              a custom training job prefix. This is meant to be called via the sagemaker
@@ -46,7 +46,7 @@ For any StopTraining actions in the action list, update the trainingjob
              excluded here so that any failures in validation of the training job name
              are intentionally caught in the sagemaker SDK and not here.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ActionList$update_training_job_prefix_if_specified(training_job_name)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ActionList$update_training_job_prefix_if_not_specified(training_job_name)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

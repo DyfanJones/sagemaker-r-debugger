@@ -65,7 +65,7 @@ ActionList = R6Class("ActionList",
     #'              excluded here so that any failures in validation of the training job name
     #'              are intentionally caught in the sagemaker SDK and not here.
     #' @param training_job_name : Name of the training job, passed in when `estimator.fit` is called.
-    update_training_job_prefix_if_specified = function(training_job_name){
+    update_training_job_prefix_if_not_specified = function(training_job_name){
       for (action in self$actions){
         if (inherits(action, "StopTraining"))
           action$update_training_job_prefix_if_not_specified(training_job_name)
