@@ -16,7 +16,7 @@ This rule will create a profiler report after invoking all of the rules. The par
              }
 }
 \section{Super class}{
-\code{\link[R6sagemaker.debugger:ProfilerRuleBase]{R6sagemaker.debugger::ProfilerRuleBase}} -> \code{ProfilerReport}
+\code{\link[sagemaker.debugger:ProfilerRuleBase]{sagemaker.debugger::ProfilerRuleBase}} -> \code{ProfilerReport}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -28,7 +28,7 @@ This rule will create a profiler report after invoking all of the rules. The par
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
-\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../R6sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{R6sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
 }
 \out{</details>}
 }

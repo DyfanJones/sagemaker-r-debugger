@@ -8,7 +8,7 @@ This rule helps to detect how many dataloader processes are running
              in parallel and whether the total number is equal the number of available CPU cores.
 }
 \section{Super class}{
-\code{\link[R6sagemaker.debugger:ProfilerRuleBase]{R6sagemaker.debugger::ProfilerRuleBase}} -> \code{Dataloader}
+\code{\link[sagemaker.debugger:ProfilerRuleBase]{sagemaker.debugger::ProfilerRuleBase}} -> \code{Dataloader}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -20,7 +20,7 @@ This rule helps to detect how many dataloader processes are running
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
-\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../R6sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{R6sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
 }
 \out{</details>}
 }

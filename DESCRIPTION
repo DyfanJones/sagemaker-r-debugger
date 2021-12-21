@@ -1,4 +1,4 @@
-Package: R6sagemaker.debugger
+Package: sagemaker.debugger
 Type: Package
 Title: R6sagemaker debugger for sagemaker operations
 Version: 0.1.0

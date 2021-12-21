@@ -12,7 +12,7 @@ This rule helps to detect if GPU is underulitized because of the batch size bein
              a processing/dataloading bottleneck, because more data needs to be pre-processed in each iteration.
 }
 \section{Super class}{
-\code{\link[R6sagemaker.debugger:ProfilerRuleBase]{R6sagemaker.debugger::ProfilerRuleBase}} -> \code{BatchSize}
+\code{\link[sagemaker.debugger:ProfilerRuleBase]{sagemaker.debugger::ProfilerRuleBase}} -> \code{BatchSize}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -24,7 +24,7 @@ This rule helps to detect if GPU is underulitized because of the batch size bein
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
-\item \out{<span class="pkg-link" data-pkg="R6sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../R6sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{R6sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="sagemaker.debugger" data-topic="ProfilerRuleBase" data-id="format">}\href{../../sagemaker.debugger/html/ProfilerRuleBase.html#method-format}{\code{sagemaker.debugger::ProfilerRuleBase$format()}}\out{</span>}
 }
 \out{</details>}
 }

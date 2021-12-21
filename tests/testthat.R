@@ -1,4 +1,4 @@
 library(testthat)
-library(R6sagemaker.debugger)
+library(sagemaker.debugger)
 
-test_check("R6sagemaker.debugger")
+test_check("sagemaker.debugger")
