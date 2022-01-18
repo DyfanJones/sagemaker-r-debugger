@@ -35,7 +35,7 @@
   config_file_path = RULE_CONFIG_FILE()
 
   if (file.exists(config_file_path)){
-    configs = fromJSON(json_data)
+    configs = fromJSON(config_file_path)
     rule_config = configs[names(configs) %in% rules]
   }
   return(rules_config)
