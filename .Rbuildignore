@@ -5,3 +5,5 @@
 ^NOTICE.txt
 ^LICENSE.txt
 ^\.github$
+^vendor$
+Makefile
