@@ -1,0 +1,3 @@
+[submodule "vendor/smdebug_rulesconfig"]
+	path = vendor/smdebug_rulesconfig
+	url = https://github.com/awslabs/sagemaker-debugger-rulesconfig
